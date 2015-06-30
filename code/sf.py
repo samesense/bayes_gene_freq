@@ -1,6 +1,6 @@
 """Snakefile."""
 
-WORK = '../working/'
+WORK  = '../working/'
 PLOTS = '../plots/'
 
 rule clean:
@@ -15,15 +15,18 @@ rule clean:
 rule traceTarget:
     output: WORK + 'target.trace', \
             PLOTS + 'target.png'
-    shell: 'python traceTarget.py {output}'
+    shell:  'python traceTarget.py {output}'
 
 rule traceEsp:
     output: WORK + 'esp.trace', \
             PLOTS + 'esp.png'
-    shell: 'python traceEsp.py {output}'
+    shell:  'python traceEsp.py {output}'
 
 rule cmpTraces:    
-    input: WORK + 'target.trace', \
-           WORK + 'esp.trace'
+    input:  WORK + 'target.trace', \
+            WORK + 'esp.trace'
     output: PLOTS + 'cmp.png'
-    shell: 'python cmpTraces.py {input} {output}'
+    shell:  'python cmpTraces.py {input} {output}'
+
+# rule BARD1:
+#     input:             
